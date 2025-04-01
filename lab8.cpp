@@ -64,6 +64,19 @@ void multiplyMatrices(int matrix1[MAX_SIZE][MAX_SIZE], int matrix2[MAX_SIZE][MAX
     }
 }
 
+void sumDiagonals(int matrix[MAX_SIZE][MAX_SIZE], int size){ 
+    int mainDiagSum = 0;         //Variable to hold the sum of the first diagonal
+    int secDiagSum = 0;         //Variable to hold the sum of the second diagonal
+
+    for (int i = 0; i < size; i++){         //Loop to sum the diagonals
+        mainDiagSum += matrix[i][i];       //Sum the main diagonal
+        secDiagSum += matrix[i][size - i - 1];       //Sum the second diagonal
+    }
+    
+    cout << "Sum of the main diagonal: " << mainDiagSum << endl; //Print the sum of the main diagonal
+    cout << "Sum of the secondary diagonal: " << secDiagSum << endl; //Print the sum of the secondary diagonal
+}
+
 
 int main(){
     int size;                //Variable to hold the size of the matrix
@@ -89,6 +102,7 @@ int main(){
 
     multiplyMatrices(matrix1, matrix2, size);         //Call the function to multiply the two matrices
     
+    sumDiagonals(matrix1, size);         //Call the function to sum the diagonals of the first matrix
     
     
     return 0;
