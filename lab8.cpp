@@ -100,6 +100,55 @@ void swapMatrixRows(int matrix[MAX_SIZE][MAX_SIZE], int size){
     }
 }
 
+void swapMatrixColumns(int matrix[MAX_SIZE][MAX_SIZE], int size){ 
+    int col1, col2;         //Variables to hold the two columns to swap
+    cout << "Enter the two columns to swap (0 to " << size - 1 << "): "; //Ask user for the two columns wanting to swap
+    cin >> col1 >> col2;         //Get the two columns from the user
+    
+    if (col1 < 0 || col1 >= size || col2 < 0 || col2 >= size){         //Check if the columns are valid
+        cout << "Invalid column numbers." << endl;         //Print error message
+        return;         //Return from the function
+    }
+    for (int i = 0; i < size; i++){         //Loop to swap the two columns
+        int temp = matrix[i][col1];       //Temporary variable to hold the value of the first column
+        matrix[i][col1] = matrix[i][col2];       //Swap the two columns
+        matrix[i][col2] = temp;       //Swap the two columns
+    }
+    cout << "Matrix after swapping columns: " << endl; //Print the matrix after swapping the columns
+    for (int i = 0; i < size; i++){         //Loop to print the matrix after swapping the columns
+        for (int j = 0; j < size; j++){         //Loop to print the matrix after swapping the columns
+            cout << matrix[i][j] << " ";       //Print the matrix after swapping the columns
+        }
+        cout << endl;         //Print a new line to show each row of the result matrix
+    }
+}
+
+void updateMatrixValue(int matrix[MAX_SIZE][MAX_SIZE], int size){ 
+    int row, col, value;         //Variables to hold the row, column and value to update
+    cout << "Enter the row to update (0 to " << size - 1 << "): "; //Ask user for the row
+    cin >> row;         //Get the row from user
+    
+    cout << "Enter the column to update (0 to " << size - 1 << "): "; //Ask user for the column
+    cin >> col;         //Get the column from user
+
+    cout << "Enter the value to update: "; //Ask user for the value to update
+    cin >> value;         //Get the value from user
+
+    if (row < 0 || row >= size || col < 0 || col >= size){         //Check if the row and column are valid
+        cout << "Invalid row or column number." << endl;         //Print error message
+        return;         //Return from the function
+    }
+
+    matrix[row][col] = value;       //Update the matrix with the new value
+    cout << "Matrix after updating value: " << endl; //Print the matrix after updating the value
+    for (int i = 0; i < size; i++){         //Loop to print the matrix after updating the value
+        for (int j = 0; j < size; j++){         //Loop to print the matrix after updating the value
+            cout << matrix[i][j] << " ";       //Print the matrix after updating the value
+        }
+        cout << endl;         //Print a new line to show each row of the result matrix
+    }
+}
+
 
 int main(){
     int size;                //Variable to hold the size of the matrix
@@ -121,13 +170,17 @@ int main(){
     readMatrix(matrix1, size, inFile);         //Call the function to read in the first matrix
     readMatrix(matrix2, size, inFile);        //Call the function to read in the second matrix
     
-    addMatrices(matrix1, matrix2, size);         //Call the function to add the two matrices
+    //addMatrices(matrix1, matrix2, size);         //Call the function to add the two matrices
 
-    multiplyMatrices(matrix1, matrix2, size);         //Call the function to multiply the two matrices
+    //multiplyMatrices(matrix1, matrix2, size);         //Call the function to multiply the two matrices
     
-    sumDiagonals(matrix1, size);         //Call the function to sum the diagonals of the first matrix
+    //sumDiagonals(matrix1, size);         //Call the function to sum the diagonals of the first matrix
     
-    swapMatrixRows(matrix1, size);         //Call the function to swap the two rows of the first matrix
+    //swapMatrixRows(matrix1, size);         //Call the function to swap the two rows of the first matrix
+
+    //swapMatrixColumns(matrix1, size);         //Call the function to swap the two columns of the first matrix
+
+    updateMatrixValue(matrix1, size);         //Call the function to update the value of the first matrix
 
     return 0;
 }
