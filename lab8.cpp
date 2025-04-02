@@ -170,15 +170,15 @@ int main(){
     readMatrix(matrix1, size, inFile);         //Call the function to read in the first matrix
     readMatrix(matrix2, size, inFile);        //Call the function to read in the second matrix
     
-    //addMatrices(matrix1, matrix2, size);         //Call the function to add the two matrices
+    addMatrices(matrix1, matrix2, size);         //Call the function to add the two matrices
 
-    //multiplyMatrices(matrix1, matrix2, size);         //Call the function to multiply the two matrices
+    multiplyMatrices(matrix1, matrix2, size);         //Call the function to multiply the two matrices
     
-    //sumDiagonals(matrix1, size);         //Call the function to sum the diagonals of the first matrix
+    sumDiagonals(matrix1, size);         //Call the function to sum the diagonals of the first matrix
     
-    //swapMatrixRows(matrix1, size);         //Call the function to swap the two rows of the first matrix
+    swapMatrixRows(matrix1, size);         //Call the function to swap the two rows of the first matrix
 
-    //swapMatrixColumns(matrix1, size);         //Call the function to swap the two columns of the first matrix
+    swapMatrixColumns(matrix1, size);         //Call the function to swap the two columns of the first matrix
 
     updateMatrixValue(matrix1, size);         //Call the function to update the value of the first matrix
 
