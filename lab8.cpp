@@ -77,6 +77,29 @@ void sumDiagonals(int matrix[MAX_SIZE][MAX_SIZE], int size){
     cout << "Sum of the secondary diagonal: " << secDiagSum << endl; //Print the sum of the secondary diagonal
 }
 
+void swapMatrixRows(int matrix[MAX_SIZE][MAX_SIZE], int size){ 
+    int row1, row2;         //Variables to hold the two rows to swap
+    cout << "Enter the two rows to swap (0 to " << size - 1 << "): "; //Ask user for the two rows wanting to swap
+    cin >> row1 >> row2;         //Get the two rows from the user
+    
+    if (row1 < 0 || row1 >= size || row2 < 0 || row2 >= size){         //Check if the rows are valid
+        cout << "Invalid row numbers." << endl;         //Print error message
+        return;         //Return from the function
+    }
+    for (int j = 0; j < size; j++){         //Loop to swap the two rows
+        int temp = matrix[row1][j];       //Temporary variable to hold the value of the first row
+        matrix[row1][j] = matrix[row2][j];       //Swap the two rows
+        matrix[row2][j] = temp;       //Swap the two rows
+    }
+    cout << "Matrix after swapping rows: " << endl; //Print the matrix after swapping the rows
+    for (int i = 0; i < size; i++){         //Loop to print the matrix after swapping the rows
+        for (int j = 0; j < size; j++){         //Loop to print the matrix after swapping the rows
+            cout << matrix[i][j] << " ";       //Print the matrix after swapping the rows
+        }
+        cout << endl;         //Print a new line to show each row of the result matrix
+    }
+}
+
 
 int main(){
     int size;                //Variable to hold the size of the matrix
@@ -104,6 +127,7 @@ int main(){
     
     sumDiagonals(matrix1, size);         //Call the function to sum the diagonals of the first matrix
     
-    
+    swapMatrixRows(matrix1, size);         //Call the function to swap the two rows of the first matrix
+
     return 0;
 }
